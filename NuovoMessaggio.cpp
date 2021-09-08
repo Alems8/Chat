@@ -17,12 +17,12 @@ NuovoMessaggio::NuovoMessaggio(bool nc, std::shared_ptr<Chat> sub) : nc(nc), sub
 NuovoMessaggio::~NuovoMessaggio() {}
 
 void NuovoMessaggio::attach() {
-    auto ptr = std::make_shared<NuovoMessaggio>(*this);
+    std::shared_ptr<NuovoMessaggio> ptr = std::make_shared<NuovoMessaggio>(*this);
     subject->subscribe(ptr);
 }
 
 void NuovoMessaggio::detach() {
-    auto ptr = std::make_shared<NuovoMessaggio>(*this);
+    std::shared_ptr<NuovoMessaggio> ptr = std::make_shared<NuovoMessaggio>(*this);
     subject->unsubscribe(ptr);
 }
 

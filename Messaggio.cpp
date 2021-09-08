@@ -4,12 +4,9 @@
 
 #include "Messaggio.h"
 
-Messaggio::Messaggio(std::string mitt, std::string r, std::string mes, bool visualizzato) {
-    this->mittente = mitt;
-    this->destinatario = r;
-    this->testo = mes;
-    this->visualizzato = visualizzato;
-    this->orario = time(&orario);
+Messaggio::Messaggio(std::string mitt, std::string r, std::string mes, bool visualizzato) : mittente(mitt),
+    destinatario(r),testo(mes),visualizzato(visualizzato){
+    time(&orario);
 }
 
 const std::string &Messaggio::getMittente() const {

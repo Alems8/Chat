@@ -2,22 +2,19 @@
 // Created by alessio on 08/09/21.
 //
 
-#include <iostream>
+
 #include "NotificaMessaggio.h"
 
-NotificaMessaggio::NotificaMessaggio(std::shared_ptr<Chat> sub) {
-    this->subject = sub;
-
-}
+NotificaMessaggio::NotificaMessaggio(std::shared_ptr<Chat> sub) : subject(sub) {}
 
 void NotificaMessaggio::attach() {
-    auto ptr = std::make_shared<NotificaMessaggio>(*this);
+    std::shared_ptr<NotificaMessaggio> ptr = std::make_shared<NotificaMessaggio>(*this);
     subject->subscribe(ptr);
 }
 
 void NotificaMessaggio::detach() {
-    auto ptr = std::make_shared<NotificaMessaggio>(*this);
-    subject->subscribe(ptr);
+    std::shared_ptr<NotificaMessaggio> ptr = std::make_shared<NotificaMessaggio>(*this);
+    subject->unsubscribe(ptr);
 
 }
 

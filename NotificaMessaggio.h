@@ -7,9 +7,15 @@
 
 
 #include <memory>
+#include <iostream>
+#include <vector>
+#include <list>
+
+
 #include "Chat.h"
 #include "Observer.h"
 #include "Subject.h"
+
 
 class NotificaMessaggio : public Observer{
 public:

@@ -8,7 +8,7 @@
 Chat::Chat(Utente utent1, Utente utent2) : utente1(utent1.getNome()), utente2(utent2.getNome()){};
 
 void Chat::addMex(const Messaggio &nMex) {
-    if((utente1 == nMex.getMittente()) || (utente1 == nMex.getDestinatario()) && (utente1 == nMex.getMittente())
+    if((utente1 == nMex.getMittente()) || (utente1 == nMex.getDestinatario()) && (utente2 == nMex.getMittente())
         || (utente2 == nMex.getDestinatario()))
         mex.push_back(nMex);
     if(utente1 == nMex.getDestinatario())

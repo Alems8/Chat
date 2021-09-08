@@ -9,6 +9,8 @@
 #include <memory>
 #include <list>
 #include <vector>
+#include <iostream>
+
 #include "Subject.h"
 #include "Messaggio.h"
 #include "Utente.h"

@@ -5,9 +5,11 @@
 #ifndef CHAT_MESSAGGIO_H
 #define CHAT_MESSAGGIO_H
 
-
+#include <list>
 #include <string>
 #include <ctime>
+#include <vector>
+#include <iostream>
 
 class Messaggio {
 public:

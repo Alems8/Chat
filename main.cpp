@@ -32,5 +32,5 @@ int main() {
         std::cerr << "Out of range " << e.what() << std::endl;
 
     }
-
+    Alessio.rimuoviChat(Marco);
 }

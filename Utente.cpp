@@ -12,7 +12,7 @@ Utente::Utente(std::string nome) : nome(nome){}
 
 std::shared_ptr<Chat> Utente::nuovaChat(Utente &u) {
     Chat *c = new Chat((*this),u);
-    auto ptr = std::make_shared<Chat>(*c);
+    std::shared_ptr<Chat> ptr = std::make_shared<Chat>(*c);
     chats.insert(std::make_pair(u.getNome(),ptr));
     u.aggiungiChat(ptr, *this);
     return ptr;
