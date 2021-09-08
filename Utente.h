@@ -16,6 +16,8 @@ class Utente {
 public:
     Utente(std::string nome);
 
+    ~Utente();
+
     const std::string &getNome() const;
 
     std::shared_ptr<Chat> nuovaChat(Utente &u);
@@ -27,7 +29,7 @@ public:
 
 private:
     std::string nome;
-    std::map <std::string, std::std::shared_ptr<Chat>> chats;
+    std::map <std::string, std::shared_ptr<Chat>> chats;
 };
 
 

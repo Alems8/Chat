@@ -28,3 +28,7 @@ void Utente::aggiungiChat(std::shared_ptr<Chat> c, Utente &u) {
     chats.insert(std::make_pair(u.getNome(),c));
 
 }
+
+Utente::~Utente() {
+
+}

@@ -12,6 +12,8 @@
 #include "Subject.h"
 #include "Messaggio.h"
 #include "Utente.h"
+
+
 class Utente;
 class Chat : public Subject{
 public:
@@ -24,6 +26,8 @@ public:
     const Messaggio &ultimoMex() const;
 
     int mexNonLetti() const;
+
+    void leggiMessaggi(int i);
 
     virtual void subscribe(std::shared_ptr<Observer> o) override;
     virtual void unsubscribe(std::shared_ptr<Observer> o) override;

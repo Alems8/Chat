@@ -2,6 +2,7 @@
 // Created by alessio on 08/09/21.
 //
 
+#include <iostream>
 #include "Chat.h"
 
 Chat::Chat(Utente utent1, Utente utent2) : utente1(utent1.getNome()), utente2(utent2.getNome()){};
@@ -43,5 +44,17 @@ void Chat::notify() {
 }
 
 Chat::~Chat() {
+
+}
+
+void Chat::leggiMessaggi(int i) {
+    if(i>0 && i<mex.size()){
+        if (mex[i].getMittente() == utente2){
+            std::cout <<mex[i].getMittente()<<" ti ha inviato il seguente messaggio: " << mex[i].getTesto() <<std::endl;
+            mex[i].setVisualizzato(true);
+            this->notify();
+        }
+    }else
+        throw std::out_of_range("Nessun messaggio presente");
 
 }
