@@ -14,6 +14,7 @@
 #include "Utente.h"
 
 class Chat : public Subject{
+public:
     explicit Chat(Utente u1, Utente u2);
 
 

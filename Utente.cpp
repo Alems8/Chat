@@ -7,3 +7,8 @@
 const std::string &Utente::getNome() const {
     return nome;
 }
+
+Utente::Utente(std::string nome) {
+    this->nome = nome;
+
+}
