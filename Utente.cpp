@@ -32,3 +32,9 @@ void Utente::aggiungiChat(std::shared_ptr<Chat> c, Utente &u) {
 Utente::~Utente() {
 
 }
+
+std::shared_ptr<Chat> Utente::ricercaChat(const Utente &u) {
+    auto r = chats.find(u.getNome());
+    return (r->second);
+
+}

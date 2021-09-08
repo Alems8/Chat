@@ -28,3 +28,7 @@ void NotificaMessaggio::update() {
 void NotificaMessaggio::draw(int i) {
     std::cout << "Messaggi non letti: " << i << std::endl;
 }
+
+NotificaMessaggio::~NotificaMessaggio() {
+
+}

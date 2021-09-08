@@ -26,6 +26,7 @@ public:
 
     void aggiungiChat(std::shared_ptr<Chat> c, Utente &u);
 
+    std::shared_ptr<Chat> ricercaChat(const Utente &u);
 
 private:
     std::string nome;

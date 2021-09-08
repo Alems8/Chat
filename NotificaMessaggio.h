@@ -15,6 +15,8 @@ class NotificaMessaggio : public Observer{
 public:
     explicit NotificaMessaggio(std::shared_ptr<Chat> sub);
 
+    ~NotificaMessaggio();
+
     virtual void attach() override;
     virtual void detach() override;
     virtual void update() override;

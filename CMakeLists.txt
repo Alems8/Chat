@@ -3,4 +3,4 @@ project(Chat)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Chat main.cpp Observer.h Subject.h Messaggio.cpp Messaggio.h Chat.cpp Chat.h Utente.cpp Utente.h NotificaMessaggio.cpp NotificaMessaggio.h)
+add_executable(Chat main.cpp Observer.h Subject.h Messaggio.cpp Messaggio.h Chat.cpp Chat.h Utente.cpp Utente.h NotificaMessaggio.cpp NotificaMessaggio.h NuovoMessaggio.cpp NuovoMessaggio.h)
