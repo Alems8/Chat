@@ -3,4 +3,4 @@ project(Chat)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Chat main.cpp)
+add_executable(Chat main.cpp Observer.h Subject.h)
