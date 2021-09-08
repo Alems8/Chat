@@ -12,11 +12,12 @@
 #include "Subject.h"
 #include "Messaggio.h"
 #include "Utente.h"
-
+class Utente;
 class Chat : public Subject{
 public:
     explicit Chat(Utente u1, Utente u2);
 
+    virtual ~Chat();
 
     void addMex(const Messaggio &nMex);
 

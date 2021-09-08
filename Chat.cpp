@@ -4,15 +4,12 @@
 
 #include "Chat.h"
 
-Chat::Chat(Utente u1, Utente u2) {
-    this->utente1 = u1.getNome();
-    this->utente2 = u2.getNome();
-
-
-}
+Chat::Chat(Utente utent1, Utente utent2) : utente1(utent1.getNome()), utente2(utent2.getNome()){};
 
 void Chat::addMex(const Messaggio &nMex) {
-    mex.push_back(nMex);
+    if((utente1 == nMex.getMittente()) || (utente1 == nMex.getDestinatario()) && (utente1 == nMex.getMittente())
+        || (utente2 == nMex.getDestinatario()))
+        mex.push_back(nMex);
     if(utente1 == nMex.getDestinatario())
         this->notify();
 }
@@ -43,4 +40,8 @@ void Chat::unsubscribe(std::shared_ptr<Observer> o) {
 void Chat::notify() {
     for(auto obs:observers)
         obs->update();
+}
+
+Chat::~Chat() {
+
 }
