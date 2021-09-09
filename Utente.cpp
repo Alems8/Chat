@@ -10,11 +10,10 @@ const std::string &Utente::getNome() const {
 
 Utente::Utente(std::string nome) : nome(nome){}
 
-std::shared_ptr<Chat> Utente::nuovaChat(Utente &u) {
+std::shared_ptr<Chat> Utente::nuovaChatUtente(Utente &u) {
     Chat *c = new Chat((*this),u);
     std::shared_ptr<Chat> ptr = std::make_shared<Chat>(*c);
-    chats.insert(std::make_pair(u.getNome(),ptr));
-    u.aggiungiChat(ptr, *this);
+    this->aggiungiChat(ptr,(u));
     return ptr;
 }
 
@@ -33,8 +32,9 @@ Utente::~Utente() {
 
 }
 
-std::shared_ptr<Chat> Utente::ricercaChat(const Utente &u) {
-    auto r = chats.find(u.getNome());
-    return (r->second);
-
+void Utente::cronologiaChat() {
+    std::cout << "\nCronologia chat di: " << getNome() << std::endl;
+    for(auto &c:chats)
+        std::cout << c.first << std::endl;
 }
+

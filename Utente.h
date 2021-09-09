@@ -20,13 +20,13 @@ public:
 
     const std::string &getNome() const;
 
-    std::shared_ptr<Chat> nuovaChat(Utente &u);
+    std::shared_ptr<Chat> nuovaChatUtente(Utente &u);
 
     void rimuoviChat(const Utente &u);
 
     void aggiungiChat(std::shared_ptr<Chat> c, Utente &u);
 
-    std::shared_ptr<Chat> ricercaChat(const Utente &u);
+    void cronologiaChat();
 
 private:
     std::string nome;

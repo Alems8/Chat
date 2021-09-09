@@ -15,9 +15,8 @@ void Chat::addMex(const Messaggio &nMex) {
         this->notify();
 }
 
-const Messaggio &Chat::ultimoMex() const {
-    return mex.back();
-}
+
+
 
 int Chat::mexNonLetti() const {
     int i = 0;
@@ -47,14 +46,15 @@ Chat::~Chat() {
 
 }
 
-void Chat::leggiMessaggi(int i) {
-    if(i>0 && i<mex.size()){
-        if (mex[i].getMittente() == utente2){
-            std::cout <<mex[i].getMittente()<<" ti ha inviato il seguente messaggio: " << mex[i].getTesto() <<std::endl;
-            mex[i].setVisualizzato(true);
+void Chat::leggiChat() {
+    if(mex.size() != 0){
+        std::cout << "\nChat tra: " << utente1 << " e " << utente2 << std::endl;
+        for (auto &m:mex){
+            std::cout <<m.getMittente()<<" ha scritto: " << m.getTesto() <<std::endl;
+            m.setVisualizzato(true);
             this->notify();
         }
     }else
-        throw std::out_of_range("Nessun messaggio presente");
+        throw std::out_of_range("Nessun messaggio presente in questa chat");
 
 }

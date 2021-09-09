@@ -25,11 +25,9 @@ public:
 
     void addMex(const Messaggio &nMex);
 
-    const Messaggio &ultimoMex() const;
-
     int mexNonLetti() const;
 
-    void leggiMessaggi(int i);
+    void leggiChat();
 
     virtual void subscribe(std::shared_ptr<Observer> o) override;
     virtual void unsubscribe(std::shared_ptr<Observer> o) override;

@@ -1,33 +1,36 @@
 #include <iostream>
+#include <memory>
+
 #include "Chat.h"
 #include "Messaggio.h"
-#include "NotificaMessaggio.h"
 #include "Utente.h"
-#include "NuovoMessaggio.h"
+
 
 
 int main() {
     Utente Alessio("Alessio");
     Utente Marco("Marco");
-    std::shared_ptr<Chat> ptr = Alessio.nuovaChat(Marco);
-    std::shared_ptr<Chat> ptr2 = Alessio.ricercaChat(Marco);
+    Utente Lucia("Lucia");
+    std::shared_ptr<Chat> ptr = Alessio.nuovaChatUtente(Marco);
+    std::shared_ptr<Chat> ptr2 = Alessio.nuovaChatUtente(Lucia);
+
 
     Messaggio m1("Alessio","Marco","Ciao, come va?");
     Messaggio m2("Marco","Alessio","Tutto bene, te?");
     Messaggio m3("Alessio","Marco","Bene, grazie.");
 
-    NuovoMessaggio nm(true,ptr);
-    NotificaMessaggio notmex(ptr);
+    Messaggio m4("Alessio","Lucia","Ehi come va?");
 
-    nm.attach();
-    notmex.attach();
-    ptr2->addMex(m1);
+
+    ptr->addMex(m1);
     ptr->addMex(m2);
     ptr->addMex(m3);
+    ptr2->addMex(m4);
 
     try{
-        ptr->leggiMessaggi(1);
-        ptr2->leggiMessaggi(5);
+        ptr->leggiChat();
+        ptr2->leggiChat();
+        Alessio.cronologiaChat();
     } catch (std::out_of_range &e) {
         std::cerr << "Out of range " << e.what() << std::endl;
 
