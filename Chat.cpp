@@ -50,7 +50,11 @@ void Chat::leggiChat() {
     if(mex.size() != 0){
         std::cout << "\nChat tra: " << utente1 << " e " << utente2 << std::endl;
         for (auto &m:mex){
-            std::cout <<m.getMittente()<<" ha scritto: " << m.getTesto() <<std::endl;
+            char buffer[80];
+            time_t ora = m.getOrario();
+            struct tm *oa = localtime(&ora);
+            strftime(buffer,80,"%I:%M%p",oa);
+            std::cout <<m.getMittente()<<" ha scritto alle " << buffer<< ": " << m.getTesto() <<std::endl;
             m.setVisualizzato(true);
             this->notify();
         }
