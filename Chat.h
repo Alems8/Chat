@@ -25,11 +25,13 @@ public:
 
     void addMex(const Messaggio &nMex);
 
-    int mexNonLetti() const;
+    int mexNonLetti();
 
     void leggiChat();
 
     int getChatDim();
+
+    int getNotifiche();
 
     const std::string &getUtente1() const;
 
@@ -45,7 +47,7 @@ private:
     std::vector<Messaggio> mex;
     std::string utente1;
     std::string utente2;
-
+    int notifiche;
 };
 
 

@@ -8,9 +8,12 @@
 Chat::Chat(Utente utent1, Utente utent2) : utente1(utent1.getNome()), utente2(utent2.getNome()){};
 
 void Chat::addMex(const Messaggio &nMex) {
-    if((utente1 == nMex.getMittente()) || (utente1 == nMex.getDestinatario()) && (utente2 == nMex.getMittente())
-        || (utente2 == nMex.getDestinatario()))
+    if(((utente1 == nMex.getMittente()) || (utente1 == nMex.getDestinatario())) && ((utente2 == nMex.getMittente())
+        || (utente2 == nMex.getDestinatario())))
         mex.push_back(nMex);
+    else{
+        throw std::out_of_range("Questo messaggio non appartiene a questa chat");
+    }
     if(utente1 == nMex.getDestinatario())
         this->notify();
 }
@@ -18,14 +21,15 @@ void Chat::addMex(const Messaggio &nMex) {
 
 
 
-int Chat::mexNonLetti() const {
+int Chat::mexNonLetti() {
     int i = 0;
     for(auto &m :mex){
-        if (m.getDestinatario() == utente2){
+        if (m.getMittente() == utente2){
             if (!m.isVisualizzato())
                 i++;
         }
     }
+    notifiche = i;
     return i;
 }
 
@@ -55,9 +59,10 @@ void Chat::leggiChat() {
             struct tm *oa = localtime(&ora);
             strftime(buffer,80,"%I:%M%p",oa);
             std::cout <<m.getMittente()<<" ha scritto alle " << buffer<< ": " << m.getTesto() <<std::endl;
-            m.setVisualizzato(true);
-            this->notify();
+            if(m.getDestinatario() == utente1)
+                m.setVisualizzato(true);
         }
+        this->notify();
     }else
         throw std::out_of_range("Nessun messaggio presente in questa chat");
 
@@ -73,4 +78,8 @@ const std::string &Chat::getUtente1() const {
 
 const std::string &Chat::getUtente2() const {
     return utente2;
+}
+
+int Chat::getNotifiche() {
+    return notifiche;
 }

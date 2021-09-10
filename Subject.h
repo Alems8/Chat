@@ -8,7 +8,7 @@
 
 class Subject {
 public:
-    virtual ~Subject(){}
+    virtual ~Subject() = default;
     virtual void subscribe(std::shared_ptr<Observer> observer) = 0;
     virtual void unsubscribe(std::shared_ptr<Observer> observer) = 0;
     virtual void notify() = 0;

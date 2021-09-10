@@ -5,7 +5,7 @@
 #include "Chat.h"
 #include "Messaggio.h"
 #include "Utente.h"
-
+#include "NotificaMessaggio.h"
 
 
 int main() {
@@ -26,22 +26,22 @@ int main() {
     Messaggio m5("Marco","Lucia","Ciao, che fai stasera?");
     Messaggio m6("Lucia","Marco","Niente di che. Usciamo insieme?");
     Messaggio m7("Marco","Lucia","Va bene. A dopo");
-
-
+    NotificaMessaggio nm(ptr);
+    nm.attach();
     ptr->addMex(m1);
+
     ptr2->addMex(m4);
 
-    sleep(10);
+/*    sleep(10);*/
 
     ptr->addMex(m2);
     ptr3->addMex(m5);
 
-    sleep(20);
+/*    sleep(20);*/
 
     ptr3->addMex(m6);
     ptr->addMex(m3);
     ptr3->addMex(m7);
-
     try{
         ptr->leggiChat();
         ptr2->leggiChat();
@@ -54,6 +54,7 @@ int main() {
 
     }
     Alessio.rimuoviChat(Marco);
+    nm.detach();
     Alessio.rimuoviChat(Lucia);
     Marco.rimuoviChat(Lucia);
 }
