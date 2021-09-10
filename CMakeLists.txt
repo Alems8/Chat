@@ -3,4 +3,9 @@ project(Chat)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Chat main.cpp Observer.h Subject.h Messaggio.cpp Messaggio.h Chat.cpp Chat.h Utente.cpp Utente.h)
+add_subdirectory(Test)
+
+set(SOURCE_FILES Observer.h Subject.h Messaggio.cpp Messaggio.h Chat.cpp Chat.h Utente.cpp Utente.h)
+add_executable(Chat main.cpp)
+add_library(core ${SOURCE_FILES})
+target_link_libraries(Chat core)

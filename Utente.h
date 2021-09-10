@@ -28,6 +28,8 @@ public:
 
     void cronologiaChat();
 
+    int getNumeroChats();
+
 private:
     std::string nome;
     std::map <std::string, std::shared_ptr<Chat>> chats;

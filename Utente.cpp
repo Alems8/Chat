@@ -38,3 +38,7 @@ void Utente::cronologiaChat() {
         std::cout << c.first << std::endl;
 }
 
+int Utente::getNumeroChats() {
+    return chats.size();
+}
+

@@ -29,6 +29,12 @@ public:
 
     void leggiChat();
 
+    int getChatDim();
+
+    const std::string &getUtente1() const;
+
+    const std::string &getUtente2() const;
+
     virtual void subscribe(std::shared_ptr<Observer> o) override;
     virtual void unsubscribe(std::shared_ptr<Observer> o) override;
     virtual void notify() override;

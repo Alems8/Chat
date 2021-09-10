@@ -21,7 +21,7 @@ void Chat::addMex(const Messaggio &nMex) {
 int Chat::mexNonLetti() const {
     int i = 0;
     for(auto &m :mex){
-        if (m.getDestinatario() == utente1){
+        if (m.getDestinatario() == utente2){
             if (!m.isVisualizzato())
                 i++;
         }
@@ -61,4 +61,16 @@ void Chat::leggiChat() {
     }else
         throw std::out_of_range("Nessun messaggio presente in questa chat");
 
+}
+
+int Chat::getChatDim() {
+    return mex.size();
+}
+
+const std::string &Chat::getUtente1() const {
+    return utente1;
+}
+
+const std::string &Chat::getUtente2() const {
+    return utente2;
 }
