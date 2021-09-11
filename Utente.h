@@ -28,7 +28,7 @@ public:
 
     void cronologiaChat();
 
-    int getNumeroChats();
+    int getNumeroChats() const;
 
 private:
     std::string nome;

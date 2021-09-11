@@ -25,13 +25,15 @@ public:
 
     void addMex(const Messaggio &nMex);
 
-    int mexNonLetti();
+    int mexNonLetti() ;
 
     void leggiChat();
 
-    int getChatDim();
+    int getChatDim() const;
 
-    int getNotifiche();
+    int getNotifiche() const;
+
+    void setNotifiche(int notifiche);
 
     const std::string &getUtente1() const;
 
