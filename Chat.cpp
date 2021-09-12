@@ -29,7 +29,6 @@ int Chat::mexNonLetti() {
                 i++;
         }
     }
-    this->setNotifiche(i);
     return i;
 }
 
@@ -80,10 +79,3 @@ const std::string &Chat::getUtente2() const {
     return utente2;
 }
 
-int Chat::getNotifiche() const{
-    return notifiche;
-}
-
-void Chat::setNotifiche(int notifiche) {
-    Chat::notifiche = notifiche;
-}

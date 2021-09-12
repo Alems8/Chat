@@ -31,10 +31,6 @@ public:
 
     int getChatDim() const;
 
-    int getNotifiche() const;
-
-    void setNotifiche(int notifiche);
-
     const std::string &getUtente1() const;
 
     const std::string &getUtente2() const;
