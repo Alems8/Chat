@@ -35,6 +35,9 @@ public:
 
     const std::string &getUtente2() const;
 
+    void setNotifica(int i);
+    int getNotifica() const;
+
     virtual void subscribe(std::shared_ptr<Observer> o) override;
     virtual void unsubscribe(std::shared_ptr<Observer> o) override;
     virtual void notify() override;

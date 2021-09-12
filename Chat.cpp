@@ -79,3 +79,12 @@ const std::string &Chat::getUtente2() const {
     return utente2;
 }
 
+void Chat::setNotifica(int i) {
+    notifiche = i;
+
+}
+
+int Chat::getNotifica() const {
+    return notifiche;
+}
+
