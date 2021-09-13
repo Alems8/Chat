@@ -16,7 +16,15 @@ void TestNotifica::detach() {
 
 void TestNotifica::update() {
     int i = subject->mexNonLetti();
-    subject->setNotifica(i);
+    setNotifica(i);
+}
+
+void TestNotifica::setNotifica(int i) {
+    notifica = i;
+}
+
+int TestNotifica::getNotifica() const {
+    return notifica;
 }
 
 

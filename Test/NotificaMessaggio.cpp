@@ -34,12 +34,12 @@ TEST_F(NotificaSuite, MessaggiDaLeggere){
     c->addMex(*m2);
     c->addMex(*m3);
     c->addMex(*m4);
-    ASSERT_EQ(2,c->getNotifica());
+    ASSERT_EQ(2,tn->getNotifica());
     c->leggiChat();
-    ASSERT_EQ(0,c->getNotifica());
+    ASSERT_EQ(0,tn->getNotifica());
     c->addMex(*m5);
     c->addMex(*m6);
     c->addMex(*m7);
-    ASSERT_EQ(1,c->getNotifica());
+    ASSERT_EQ(1,tn->getNotifica());
 
 }

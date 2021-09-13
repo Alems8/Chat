@@ -21,10 +21,12 @@ public:
 
     virtual void update() override;
 
+    void setNotifica(int i);
+    int getNotifica() const;
 
 private:
     std::shared_ptr<Chat> subject;
-
+    int notifica;
 
 
 };
